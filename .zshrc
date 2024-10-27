@@ -26,7 +26,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -42,7 +42,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -71,7 +71,12 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+	git
+	fzf
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,6 +111,14 @@ fi
 
 # Starship prompt set up
 eval "$(starship init zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+# For fzf cli auto-completions
+export FZF_BASE=/usr/bin/fzf
+# To disable cli fzf auto-completions
+# DISABLE_FZF_AUTO_COMPLETION="true"
+# Only available on fzf version >0.54. apt is on 0.44 :(
+# source <(fzf --zsh)
 
 # Zoxide set up
 eval "$(zoxide init --cmd cd zsh)"
