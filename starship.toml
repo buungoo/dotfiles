@@ -196,8 +196,7 @@ $line_break$character"""
 palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
-# color_fg0 = '#fbf1c7'
-color_fg0 = "#1f1f28" # sumiInk1 
+color_fg0 = '#fbf1c7'
 color_bg1 = '#3c3836'
 color_bg3 = '#665c54'
 color_blue = '#458588'
